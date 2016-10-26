@@ -2932,7 +2932,7 @@ static int binder_node_release(struct binder_node *node, int refs)
 
 #if 0
 		if (!ref->death)
-			goto out;
+			continue;
 
 		death++;
 
