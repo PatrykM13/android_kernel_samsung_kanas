@@ -66,5 +66,5 @@ SANDROID KERNEL FEATURES :
 	===============================
 	SANDROID KERNEL v1.4 28-10-2016
 	===============================
-		* UPSTREAM to 3.10.56
+		* UPSTREAM to 3.10.56+
 
