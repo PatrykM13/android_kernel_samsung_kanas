@@ -25,7 +25,6 @@ SANDROID KERNEL FEATURES :
 
 		* CPU
 			- Try add OC 1.3Ghz and UC 200MHz
-			- Fix CPU clock stuck at max clock.(In stockrom need turn on powersave in quicksetting toggle)
 
 		* Memory
 			- Support Low Memory Killer
@@ -35,6 +34,7 @@ SANDROID KERNEL FEATURES :
 			- Support for Dynamic-FSync
 			- USB fast charge
 			- Support power suspend (Mode and State)
+			- Fix CPU Stuck cause by touch boost
 			- HID Keyboard + Keyboard
 
 
@@ -62,6 +62,9 @@ SANDROID KERNEL FEATURES :
 			+ Optimized Console FrameBuffer for upto 70% increase in Performance
 			+ Optimized Integer SQRT. for upto 3x faster operation
 			+ Reduced Kernel Log Buffer to minimum
-			+ Enable all TCP congestions
 
+	===============================
+	SANDROID KERNEL v1.4 28-10-2016
+	===============================
+		* UPSTREAM to 3.10.56
 
