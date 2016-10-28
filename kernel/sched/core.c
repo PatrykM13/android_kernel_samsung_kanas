@@ -1239,7 +1239,7 @@ out:
 		 * leave kernel.
 		 */
 		if (p->mm && printk_ratelimit()) {
-			printk_sched("process %d (%s) no longer affine to cpu%d\n",
+			printk_deferred("process %d (%s) no longer affine to cpu%d\n",
 					task_pid_nr(p), p->comm, cpu);
 		}
 	}
@@ -5284,7 +5284,6 @@ static int __cpuinit sched_cpu_active(struct notifier_block *nfb,
 				      unsigned long action, void *hcpu)
 {
 	switch (action & ~CPU_TASKS_FROZEN) {
-	case CPU_STARTING:
 	case CPU_DOWN_FAILED:
 		set_cpu_active((long)hcpu, true);
 		return NOTIFY_OK;
@@ -7946,6 +7945,7 @@ static s64 cpu_cfs_quota_read_s64(struct cgroup *cgrp, struct cftype *cft)
 
 static int cpu_cfs_quota_write_s64(struct cgroup *cgrp, struct cftype *cftype,
 				s64 cfs_quota_us)
+
 {
 	return tg_set_cfs_quota(cgroup_tg(cgrp), cfs_quota_us);
 }

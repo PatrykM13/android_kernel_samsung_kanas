@@ -9,7 +9,7 @@ set -e -o pipefail
 
 DEFCONFIG=sandroid_kanas_defconfig
 NAME=SandroidKernel
-VERSION=v1.4
+VERSION=1.4
 DEVICE=kanas
 OWNER=MuhammadIhsan-Ih24n
 NOW=`date "+%d%m%Y-%H%M%S"`
