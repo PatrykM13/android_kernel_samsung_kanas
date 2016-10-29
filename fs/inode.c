@@ -604,6 +604,7 @@ static void dispose_list(struct list_head *head)
 void evict_inodes(struct super_block *sb)
 {
 	struct inode *inode, *next;
+
 	LIST_HEAD(dispose);
 
 	spin_lock(&inode_sb_list_lock);
@@ -1628,8 +1629,8 @@ int file_remove_suid(struct file *file)
 		error = security_inode_killpriv(dentry);
 	if (!error && killsuid)
 		error = __remove_suid(dentry, killsuid);
-	if (!error && (inode->i_sb->s_flags & MS_NOSEC))
-		inode->i_flags |= S_NOSEC;
+	if (!error)
+		inode_has_no_xattr(inode);
 
 	return error;
 }
